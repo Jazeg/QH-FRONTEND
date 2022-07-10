@@ -1,0 +1,163 @@
+<main>
+    <div class="position-relative">
+      <!-- shape Hero -->
+      <section class="section section-lg section-shaped pb-250">
+        <div class="shape shape-style-1 shape-default">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="container py-lg-md d-flex">
+          <div class="col px-0">
+            <div class="row">
+              <div class="col-lg-6">
+                <h1 class="display-3  text-white">Formularios
+                  <span>1 formulario disponible :)</span>
+                </h1>
+                <p class="lead  text-white">Completa todos los formularios para llevar un mejor control de las asistencias.</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <!-- SVG separator -->
+        <div class="separator separator-bottom separator-skew">
+          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
+        </div>
+      </section>
+
+      <div class="container">
+      <form>
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Apellidos y nombres</label>
+            <input type="text" class="form-control" id="inputEmail4">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Código</label>
+            <input type="text" class="form-control" id="inputEmail4">
+          </div>
+
+        </div>
+
+        <div class="form-row">
+
+          
+          <div class="col-md-6">
+            <label for="inputEmail4">Fecha en la que apoyó</label>
+            <div class="form-group" [ngClass]="{'focused':focus2===true}">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                </div>
+                <input class="form-control datepicker" placeholder="Selecciona el día" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" (focus)="focus2=true" (blur)="focus2=false" type="text" autocomplete="off"/>
+              </div>
+            </div>
+          </div>
+        
+
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">¿Averiguó usted si esta persona tiene otras necesidades?</label>
+              <input type="text" class="form-control" id="inputEmail4">
+            </div>
+            
+            
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Describa a detalle que parte del programa desarrolló</label>
+            <input type="text" class="form-control" id="inputEmail4">
+          </div> 
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">¿Estaría usted interesado en regresar a este lugar para que siga
+              desarrollando otras actividades de apoyo a las personas que no
+              necesariamente tengan nota?</label>
+            <input type="text" class="form-control" id="inputEmail4">
+          </div> 
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">¿Como  parte de que curso esta haciendo esta actividad?</label>
+            <input type="text" class="form-control" id="inputEmail4">
+          </div> 
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">¿Estaría usted interesado en poder hablar a esta persona 
+              acerca de Dios?</label>
+            <input type="text" class="form-control" id="inputEmail4">
+          </div> 
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Selecione ¿A qué programa social fue usted?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                FCE - Programa  de Emprendedurismo</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                FCS - Programa de Resoliencia</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                FIA - Programa de Biohuertos de esperanza</label>
+            </div>
+          </div> 
+
+
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">¿Quién es su docente de curso?</label>
+            <input type="text" class="form-control" id="inputEmail4">
+          </div> 
+        </div>
+        
+  
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">¿Se relacionó usted con alguna persona? Describa</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+
+          <div class="form-group col-md-6">
+            <div class="custom-file">
+               <input type="file" class="custom-file-input" id="customFile">
+               <label class="custom-file-label" for="customFile">Subir Evidencia</label>
+           </div>
+        </div>
+
+          
+          
+          
+        </div>
+        
+        <button type="submit" routerLink="/user-profile"class="btn btn-primary">Volver</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+   
+  
+
+    
