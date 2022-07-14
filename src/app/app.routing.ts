@@ -11,7 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { FormulariosComponent } from './formularios/formularios.component';
 import { AsistenciaComponent } from './asistencia/asistencia.component';
 import { UsuDelegadoComponent } from './usu-delegado/usu-delegado.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { ProyectosComponent } from './admin/components/proyectos/proyectos.component';
+
 
 
 const routes: Routes =[
@@ -23,7 +24,7 @@ const routes: Routes =[
     { path: 'formulario', component: FormulariosComponent},
     { path: 'asistencia', component: AsistenciaComponent},
     { path: 'user-delegado', component: UsuDelegadoComponent},
-    { path: 'admin', component: AdminComponent},
+    { path: 'proyectos', component: ProyectosComponent},
 
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];

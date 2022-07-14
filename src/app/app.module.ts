@@ -21,6 +21,8 @@ import { UsuDelegadoComponent } from './usu-delegado/usu-delegado.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ProyectosComponent } from './admin/components/proyectos/proyectos.component';
+import { ProyectoComponent } from './admin/components/proyecto/proyecto.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormulariosComponent,
     AsistenciaComponent,
     UsuDelegadoComponent,
-    AdminComponent
+    AdminComponent,
+    ProyectosComponent,
+    ProyectoComponent
   ],
   imports: [
     CommonModule,
