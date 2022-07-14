@@ -23,6 +23,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ProyectosComponent } from './admin/components/proyectos/proyectos.component';
 import { ProyectoComponent } from './admin/components/proyecto/proyecto.component';
+import { TallerComponent } from './admin/components/taller/taller.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ProyectoComponent } from './admin/components/proyecto/proyecto.componen
     UsuDelegadoComponent,
     AdminComponent,
     ProyectosComponent,
-    ProyectoComponent
+    ProyectoComponent,
+    TallerComponent
   ],
   imports: [
     CommonModule,

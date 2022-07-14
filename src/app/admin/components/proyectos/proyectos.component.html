@@ -5,47 +5,93 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Programas</h3>
+            <h3 class="card-title">Proyectos</h3>
 
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
+
         </div>
         <div class="card-body p-0">
             <table class="table table-striped table-bordered projects">
                 <thead class="thead-light">
-                    <tr>
-                        <th>
-                            #
-                        </th>
-                        <th>
-                            Nombre
-                        </th>
-                        <th>
-                            Proyecto
-                        </th>
-                    </tr>
-                </thead>
-                <tbody >
-                    <tr>
-                        <td>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                      <table class="table">
+                        <thead>
+                          <tr>
                             
-                        </td>
-                        <td>
-                            
-                        </td>
-                        <td>
-                            
-                        </td>
+                            <th scope="col">Nombre de Proyecto</th>
+                            <th scope="col">Descripcion de Proyecto</th>
+                            <th scope="col">Cro Proyecto</th>
+                            <th scope="col">Fecha Inicio</th>
+                            <th scope="col">Fecha de Fin</th>
+                            <th scope="col">Estado Proyecto</th>
+                  
+                            <th colspan="3" class="text-center">Opciones</th>
 
-                    </tr>
+                          </tr>
+                        </thead>
+                        <tbody *ngFor="let proyecto of proyectos">
+                          <tr>
+                            <td>{{proyecto.no_PROYECTO}} </td>
+                            <td>{{proyecto.de_PROYECTO}} </td>
+                            <td>{{proyecto.cro_ACTIVIDADES}} </td>
+                            <td>{{proyecto.fe_INICIO}} </td>
+                            <td>{{proyecto.fe_FINAL}} </td>
+                            <td>{{proyecto.es_PROYECTO}} </td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-success  text-white"
+                                    (click)="openModal()">Nuevo</button>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="btn text-white" style="background: #95a5a6"
+                                    (click)="openModalEdit(taller)">Modificar</button>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="btn text-white " style="background: #b33939;"
+                                    (click)="onDelete(taller)">Eliminar</button>
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+            </table>
+        </div>
 
-                </tbody>
+    
+        <!-- /.card-body -->
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Programas</h3>
+
+
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-striped table-bordered projects">
+                <thead class="thead-light">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            
+                            <th scope="col">Nombre de Programa</th>
+                            <th scope="col">Estado de programa</th>
+                            <th scope="col">Descripcion de Programa</th>
+                            <th scope="col">Duracion de Programa</th>
+                          
+
+                  
+                          </tr>
+                        </thead>
+                        <tbody *ngFor="let programa of programas">
+                          <tr>
+                            <td>{{programa.no_PROGRAMA}} </td>
+                            <td>{{programa.es_PROGRAMA}} </td>
+                            <td>{{programa.de_PROGRAMA}} </td>
+                            <td>{{programa.du_PROGRAMA}} </td>
+
+                          </tr>
+                        </tbody>
             </table>
         </div>
         <!-- /.card-body -->
@@ -57,65 +103,46 @@
         <div class="card-header">
             <h3 class="card-title">Talleres</h3>
 
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
         </div>
         <div class="card-body p-0">
             <table class="table table-striped table-bordered projects">
                 <thead class="thead-light">
                     <tr>
                         <th>
-                            #
+                            Nombre de Taller
                         </th>
                         <th>
-                            Nombre
+                            Numero de taller
                         </th>
                         <th>
-                            Descripción
+                            Fecha de Taller
                         </th>
                         <th>
-                            Programa
+                            Estado de taller
                         </th>
-                        <th>
-                            Carrera
-                        </th>
-    
-                        <th>
-                            Fecha
-                        </th>
+                       
                         <th colspan="3" class="text-center">Opciones</th>
 
                     </tr>
                 </thead>
-                <tbody *ngFor="let proyecto of proyectos">
+                <tbody *ngFor="let taller of talleres">
                     <tr>
                         <td>
-                            {{taller.idTaller}}
+                            {{taller.no_TALLER}}
                         </td>
                         <td>
-                            {{taller.nombre}}
+                            {{taller.nu_TALLER}}
                         </td>
                         <td>
-                            {{taller.descripcion}}
+                            {{taller.fe_TALLER}}
                         </td>
                         <td>
-                            {{taller.programa.nombre}}
+                            {{taller.es_TALLER}}
                         </td>
-                        <td>
-                            {{taller.carrera.nombre}}
-                        </td>
-                        <td>
-                            {{taller.fechaInicio | date: 'dd/MM/yyyy'}}
-                        </td>
+                        
                         <td class="text-center">
                             <button type="button" class="btn btn-success  text-white"
-                                (click)="openModal()">Nuevo</button>
+                                (click)="openModal2()">Nuevo</button>
                         </td>
                         <td class="text-center">
                             <button type="button" class="btn text-white" style="background: #95a5a6"
@@ -133,7 +160,7 @@
     </div>
     <!-- /.card -->
 
-</section>
+
 <!-- /.content -->
 <section class="content">
     <br>

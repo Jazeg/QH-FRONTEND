@@ -6,6 +6,7 @@ import { ProgramaService } from '../../../../providers/services/programa.service
 import { TallerService } from '../../../../providers/services/taller.service';
 import { ProyectoService } from '../../../../providers/services/proyecto.service';
 import { ProyectoServiceDelete } from '../../../../providers/services/proyecto-delete.service';
+import { TallerComponent } from '../taller/taller.component';
 
 @Component({
   selector: 'app-proyectos',
@@ -15,17 +16,23 @@ import { ProyectoServiceDelete } from '../../../../providers/services/proyecto-d
 export class ProyectosComponent implements OnInit {
 
   proyectos: any[] = [];
+  talleres: any[] = [];
+  programas: any[] = [];
 
 
   constructor(
     private proyectoService: ProyectoService,
     private proyectoDeleteService: ProyectoServiceDelete,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private programaService: ProgramaService,
+    private tallerService: TallerService
   ) { }
 
   ngOnInit(): void {
+    this.getProyectos();
+    this.getProgramas();
+    this.getTalleres();
   }
-
 
 
   getProyectos(): void {
@@ -34,6 +41,22 @@ export class ProyectosComponent implements OnInit {
       this.proyectos = response.data || [];
     });
   }
+
+
+  getProgramas(): void {
+    this.programaService.getAll$().subscribe(response => {
+      console.log(response);
+      this.programas = response.data || [];
+    });
+  }
+
+  getTalleres(): void {
+    this.tallerService.getAll$().subscribe(response => {
+      console.log(response);
+      this.talleres = response.data || [];
+    });
+  }
+
 
   openModal(): any {
     const modal = this.modalService.open(ProyectoComponent, {
@@ -57,6 +80,30 @@ export class ProyectosComponent implements OnInit {
     }).catch(res => {
     });
   }
+
+  openModal2(): any {
+    const modal = this.modalService.open(TallerComponent, {
+      size: 'lg',
+      keyboard: false,
+      backdrop: 'static'
+    });
+    modal.componentInstance.title = 'Nuevo';
+    modal.result.then(res => {
+      if (res.success) {
+        // @ts-ignore
+        Swal.fire({
+          title: 'Taller',
+          text: `${res.message}`,
+          icon: 'success',
+          confirmButtonColor: '#7f264a',
+          timer: 1500
+        });
+        this.getProyectos();
+      }
+    }).catch(res => {
+    });
+  }
+
 
   openModalEdit(item: any): any {
     const modal = this.modalService.open(ProyectoComponent, {

@@ -11,7 +11,7 @@ import {END_POINTS} from "../utils/end-point";
 export class ProyectoService  extends EntityDataService<IResponse>{
 
   constructor(protected httpClient: HttpClient) {
-    super(httpClient, END_POINTS.apiPersonaListar);
+    super(httpClient, END_POINTS.apiProyectoListar);
   }
 
 }

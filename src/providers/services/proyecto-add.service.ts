@@ -8,10 +8,10 @@ import {END_POINTS} from "../utils/end-point";
 @Injectable({
   providedIn: 'root'
 })
-export class ProgramaService  extends EntityDataService<IResponse>{
+export class ProyectoAddService  extends EntityDataService<IResponse>{
 
   constructor(protected httpClient: HttpClient) {
-    super(httpClient, END_POINTS.apiProgramaListar);
+    super(httpClient, END_POINTS.apiProyectoCrear);
   }
 
 }
