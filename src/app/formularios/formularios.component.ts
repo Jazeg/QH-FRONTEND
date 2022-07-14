@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { PersonaService } from '../../providers/services/persona.services';
 
 @Component({
   selector: 'app-formularios',
@@ -8,6 +9,8 @@ import { NgbDate, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./formularios.component.css']
 })
 export class FormulariosComponent implements OnInit {
+
+  personas:any[] = []
 
   fromDate: NgbDate;
   toDate: NgbDate;
@@ -23,10 +26,22 @@ export class FormulariosComponent implements OnInit {
   focus3;
   focus4;
 
-  constructor(private modalService: NgbModal, calendar: NgbCalendar) {
+  constructor(private modalService: NgbModal, calendar: NgbCalendar, private personaService: PersonaService) {
     this.fromDate = calendar.getToday();
     this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
+  
+  ngOnInit(): void {
+    this.getPersonas();
+  }
+
+  getPersonas(): void{
+    this.personaService.getAll$().subscribe(response => {
+      console.log(response);
+      this.personas=response.data || [];
+    })
+  }
+
 
   open(content, type, modalDimension) {
       if (modalDimension === 'sm' && type === 'modal_mini') {
@@ -81,7 +96,6 @@ export class FormulariosComponent implements OnInit {
       this.model2 = this.model1;
     }
   }
-  ngOnInit() {
-  }
+
 
 }

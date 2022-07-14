@@ -158,6 +158,48 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
    
+     <!-- SVG separator -->
+     <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido Paterno</th>
+          <th scope="col">Apellido Materno</th>
+          <th scope="col">Fecha Nacimiento</th>
+          <th scope="col">Teléfono</th>
+          <th scope="col">DNI</th>
+          <th scope="col">Sexo</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Es Persona</th>
+
+
+        </tr>
+      </thead>
+      <tbody *ngFor="let persona of personas">
+        <tr>
+          <td>{{persona.no_PERSONA}} </td>
+          <td>{{persona.ap_PATERNO}} </td>
+          <td>{{persona.ap_MATERNO}} </td>
+          <td>{{persona.fe_NAC}} </td>
+          <td>{{persona.nu_TELEFONO}} </td>
+          <td>{{persona.nu_DNI}} </td>
+          <td>{{persona.ti_SEXO}} </td>
+          <td>{{persona.di_PERSONA}} </td>
+          <td>{{persona.es_PERSONA}} </td>
+          
+          
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Nuevo</button>
   
 
     
